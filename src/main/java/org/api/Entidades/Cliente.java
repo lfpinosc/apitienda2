@@ -1,12 +1,12 @@
 package org.api.Entidades;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 public class Cliente extends PanacheEntity {
@@ -31,4 +31,7 @@ public class Cliente extends PanacheEntity {
     @Size(max = 120, message = "El correo no puede exceder 120 caracteres")
     @Column(length = 120, unique = true, nullable = false)
     public String email;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+    public List<DocumentoPersona> documentos;
 }
