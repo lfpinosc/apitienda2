@@ -75,6 +75,31 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-hibernate-validator</artifactId>
         </dependency>
+        <!-- OpenAPI / Swagger UI -->
+        <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-smallrye-openapi</artifactId>
+        </dependency>
+
+        <!-- JWT support (verificación en runtime + generación con SmallRye) -->
+        <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-smallrye-jwt</artifactId>
+        </dependency>
+
+        <!-- Quarkus security API -->
+        <dependency>
+        <groupId>io.quarkus</groupId>
+        <artifactId>quarkus-security</artifactId>
+        </dependency>
+
+        <!-- (Opcional) para hashing de contraseñas; puedes usar otra lib -->
+        <dependency>
+        <groupId>org.mindrot</groupId>
+        <artifactId>jbcrypt</artifactId>
+        <version>0.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>
